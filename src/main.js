@@ -38,7 +38,7 @@ var selectYear = todayYear;
 // STARTING CODE
 /* Code to prep the gantt view and collapse all the extend tasks */
 showGanttMonth(todayMonth, todayYear);
-// $('.gantt-secondrow').addClass('ht0');
+$('.gantt-secondrow').addClass('ht0');
 
 // EVENTS HANDLERS
 $('#nav-goprev').click(() => {
@@ -266,7 +266,7 @@ function showGanttMonth(selectMonth, selectYear) {
             <li class="pop" data-container="body" data-toggle="popover" data-placement="bottom" style="grid-column: ${
               task.gridstart
             }/${task.gridstop};">
-              <div class="bar-text">${task.name}${task.id}</div>
+              <div class="bar-text">${task.name}</div>
               <div class="bar-favmark" style="background-color: ${
                 task.fav ? task.favColor : 'none'
               }"></div> 
