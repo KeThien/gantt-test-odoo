@@ -3,11 +3,9 @@
 ## Introduction
 
 [**DEMO**](https://nostalgic-hawking-eeafec.netlify.com/) deployed on Netlify
-If you want, you can copy the git project. [Instruction here](##Getting-Started)
+If you want, you can copy the git project. [Instruction here](#getting-started)
 
 It's part of the hiring process where I got some directives and recreate like in the screenshot
-
-![](https://drive.google.com/uc?export=download&id=1jy0yvoaLxobPULLjdSbX7OOL0bihC0a7a)
 
 ## Notes
 
