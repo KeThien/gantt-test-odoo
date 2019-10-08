@@ -1,0 +1,269 @@
+@import 'fonts';
+@import 'variables';
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  color: $color-black;
+  background: #f9f9f9;
+  font-family: $font-family-montserrat;
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 28px;
+}
+.gantt-main {
+  width: 100%;
+  max-width: 100vw !important;
+  background-color: $white;
+}
+.searchbar {
+  border-bottom: solid black 1px;
+
+  padding: 0 5px;
+  padding-bottom: 2px;
+  input {
+    border: 0;
+    background-color: transparent;
+    flex-shrink: 1;
+  }
+  .tags {
+    border: solid 1px $color-gray;
+
+    padding: 0 7px 0 0;
+    color: $color-gray;
+    cursor: pointer;
+    min-width: 67px;
+    overflow: hidden;
+    .times-icon {
+      font-size: 0.8em;
+    }
+    .tag-icon {
+      background-color: $primary;
+      display: inline-block;
+      padding: 0 6px;
+      margin: 0;
+      margin-right: 5px;
+      color: white;
+    }
+  }
+}
+.maingrid {
+  &-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 250px 4fr;
+    grid-template-rows: repeat(2, 35px) minmax(35px, 1fr);
+    border-top: solid 2px $color-gray;
+    background-color: #f2f4f6;
+  }
+  &-item {
+    &__title {
+      grid-area: 1 / 1 / span 2 / span 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__month {
+      grid-area: 1 / 2 / span 1 / span 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: solid $borderWeight $color-lightgray;
+      border-left: solid $borderWeight $color-lightgray;
+    }
+  }
+}
+.gantt {
+  grid-area: 2 / 1 / span 2 / span 2;
+  display: grid;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  &-row {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    border-bottom: $borderWeight solid $color-lightgray;
+    background-color: white;
+    transition: 1s all ease-in-out;
+    &:last-child {
+      border-bottom: 0px;
+    }
+    &__first {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding-left: 3px;
+      .rowline-button {
+        user-select: none;
+        padding: 3px 8px;
+        border-radius: $borderRadius;
+        cursor: pointer;
+        z-index: 2;
+        transition: 0.1s all ease-in;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.05);
+        }
+        &:active {
+          background-color: rgba(0, 0, 0, 0.5);
+          color: white;
+          transition: 0s;
+        }
+      }
+    }
+    &__days {
+      background-color: transparent;
+      grid-template-rows: 35px;
+      grid-template-columns: 250px repeat(28, minmax(20px, 1fr));
+      border-bottom: $borderWeight solid $color-lightgray;
+      span {
+        text-align: center;
+        align-self: center;
+        line-height: 0;
+      }
+    }
+    &__bars {
+      list-style: none;
+      display: grid;
+      padding: 0px 0;
+      margin: 0;
+      grid-template-columns: repeat(28 * 2, 1fr);
+      grid-auto-flow: column;
+      user-select: none;
+
+      li {
+        font-weight: 600;
+        text-align: left;
+        font-size: 14px;
+        height: 30px;
+        padding: 5px 3px;
+        margin: $barsMargin;
+        color: #fff;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        border-radius: $borderRadius;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        position: relative;
+
+        .bar-text {
+          white-space: nowrap;
+          overflow: hidden;
+          text-align: center;
+          text-overflow: ellipsis;
+          width: 100%;
+          z-index: 3;
+        }
+        .bar-favmark {
+          z-index: 2;
+          position: absolute;
+          height: 30px;
+          width: 30px;
+          transform: rotate(45deg);
+          top: -15px;
+          left: -15px;
+        }
+        .bar-fill {
+          position: absolute;
+          height: 100%;
+          z-index: 1;
+          left: 0;
+          &.stripes {
+            background-image: repeating-linear-gradient(
+              -45deg,
+              transparent,
+              transparent 5px,
+              rgba(255, 255, 255, 0.1) 5px,
+              rgba(255, 255, 255, 0.1) 12px
+            );
+          }
+        }
+        .bar-bg {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+    &__extend {
+      border-bottom: 0;
+      li {
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.1);
+          z-index: 2;
+          opacity: 0;
+          transition: 0.1s all ease-in;
+        }
+      }
+    }
+    &__compress {
+      .bar-compress {
+        margin-left: 2px;
+        margin-right: 2px;
+        border-radius: 0;
+        cursor: unset;
+        &.first-graybar {
+          border-radius: $borderRadius 0 0 $borderRadius;
+          margin-left: $barsMargin;
+        }
+        &.last-graybar {
+          border-radius: 0 $borderRadius $borderRadius 0;
+          margin-right: $barsMargin;
+        }
+      }
+    }
+    &__lines {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: transparent;
+
+      border-bottom: 0px;
+
+      span {
+        display: block;
+        border-right: $borderWeight solid rgba(0, 0, 0, 0.05);
+        &.marker {
+          background-color: rgba(252, 255, 52, 0.3);
+          z-index: 2;
+        }
+      }
+      &:after {
+        grid-row: 1;
+        grid-column: 0;
+        background-color: #1688b345;
+        z-index: 2;
+        height: 100%;
+      }
+    }
+    // collapse and extend second gantt row
+    &.ht0 {
+      height: 0;
+      display: none;
+    }
+  }
+  &-view-group {
+    border-top: 2px solid $color-lightgray;
+  }
+}

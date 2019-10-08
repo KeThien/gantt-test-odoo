@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Gantt View by Ke Thien</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- inject css -->
+    <link rel="stylesheet" href="css/style-86dfc50c48.css" />
+  </head>
+  <body>
+    <!-- Top Menu bar -->
+    <nav class="navbar navbar-expand navbar-dark bg-primary">
+      <ul class="navbar-nav mr-4">
+        <li class="nav-item ml-0 text-white">
+          <i class="fas fa-th"></i>
+        </li>
+      </ul>
+        <h4 class="navbar-text mr-5 my-0 text-white font-weight-bolder">
+          dd
+        </h4>
+        <span class="navbar-text text-white font-weight-bolder">trez</span>
+
+        <!-- Right aligned nav items -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mr-2">
+            <a class="nav-link text-white" href="#"><i class="fas fa-clock"></i></a>
+          </li>
+          <li class="nav-item mr-2">
+            <a class="nav-link text-white" href="#"><i class="fas fa-comments"></i></a>
+          </li>
+          <li class="nav-item mr-2">
+            <a class="nav-link text-white" href="#"><i class="fas fa-bug"></i></a>
+          </li>
+          <li class="nav-item mr-2">
+            <a class="nav-link text-white" href="#"><i class="fas fa-tools"></i></a>
+          </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="./assets/photo.jpg" class="avatar ml-2" />
+                <span class="text-white mx-1">Ke Thien Admin (gantt)</span>
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="#">Sign Out</a>
+              </div>
+            </li>
+        </ul>
+      </li>
+    </nav>
+    <!-- End Top Menu bar  -->
+    <!-- Functions Menu and search  -->
+    <div class="container gantt-main pb-1">
+      <div class="row pt-3">
+        <div class="col-6 text-left">
+          <h4 class="text-black-50">trez</h4>
+        </div>
+        <div class="col-6 text-right">
+          <div class="searchbar d-flex justify-content-between">
+            <!-- Search form -->
+            <span class="searchbar-right d-flex justify-content-between">
+              <div class="tags mr-2">
+                <span class="tag-icon">
+                  <i class="fas fa-bars"></i>
+                </span>
+                g1
+                <i class="fas fa-times"></i>
+              </div>
+              <input type="text" placeholder="Search..." aria-label="Search" />
+            </span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+      <!-- menu buttons bar -->
+      <div class="row my-3">
+        <div class="col-6 text-left">
+          <div class="btn-toolbar" role="toolbar">
+            <div class="btn-group mr-3" role="group">
+              <button type="button" class="btn btn-sm btn-secondary font-weight-bolder" >ADD</button>
+            </div>
+            <div class="btn-group mr-3" role="group">
+              <button type="button" id="nav-goprev" class="btn btn-sm btn-secondary font-weight-bolder">
+                <i class="fas fa-arrow-left"></i>
+              </button>
+              <button type="button" id="nav-gotoday" class="btn btn-sm btn-secondary font-weight-bolder">TODAY</button>
+              <button type="button" id="nav-gonext" class="btn btn-sm btn-secondary font-weight-bolder">
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+            <div class="btn-group mr-3" role="group">
+              <button type="button" class="btn btn-sm btn-light font-weight-bolder">MONTH</button>
+              <button type="button" class="btn btn-sm btn-light font-weight-bolder text-secondary no-bg">WEEK</button>
+            </div>
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-sm btn-light no-bg">
+                  <i class="fas fa-expand-arrows-alt text-secondary"></i>
+              </button>
+              <button type="button" class="btn btn-sm btn-light no-bg">
+                  <i class="fas fa-compress-arrows-alt text-secondary"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 text-left">
+          <div class="btn-group" role="group">
+            <div class="btn-group">
+              <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-filter mr-1"></i>
+                  Filters
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+            <div class="btn-group">
+              <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-bars mr-1"></i>
+                  Group by
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+            <div class="btn-group">
+              <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-star mr-1"></i>
+                  Favorites
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-2 text-right">
+          <div class="btn-group" role="group">
+            <button class="btn btn-light btn-sm no-bg active">
+              <i class="fas fa-server"></i>
+            </button>
+            <button class="btn btn-light btn-sm no-bg">
+              <i class="fas fa-list"></i>
+            </button>
+            <button class="btn btn-light btn-sm no-bg">
+              <i class="fas fa-th-large"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Gantt view  -->
+    <div class="maingrid-container">
+      <div class="maingrid-item__title">
+        Default gantt view for x_trez
+      </div>
+      <div class="maingrid-item__month">
+      </div>
+      <div class="gantt">
+        <div class="gantt-row gantt-row__days">
+          <!-- numbers of days generate from js -->
+        </div>
+        <div class="gantt-row gantt-row__lines">
+          <!-- numbers of vertical lines generate from js -->
+        </div>
+        <div id="gantt-view">
+          <div class="gantt-view-group">
+            <div class="gantt-row gantt-firstrow">
+              <div class="gantt-row__first">
+                <div class="rowline-button">
+                  <i class="far fa-minus-square"></i>
+                  <i class="far fa-plus-square d-none"></i>
+                  Primary
+                </div>
+              </div>
+              <ul class="gantt-row__bars gantt-row__compress">
+                <li class="bar-compress" style="grid-column: 5/9; background-color:rgba(0,0,0, .10)">1
+                </li>
+                <li class="bar-compress" style="grid-column: 9/11; background-color:rgba(0,0,0, .20)">2
+                </li>
+                <li class="bar-compress" style="grid-column: 11/14; background-color:rgba(0,0,0, .10)">1
+                </li>
+              </ul>
+            </div>
+            <div class="gantt-row gantt-secondrow">
+              <div class="gantt-row__first"></div>
+              <ul class="gantt-row__bars gantt-row__extend">
+                <li class="pop" data-container="body" data-toggle="popover" data-placement="bottom" style="grid-column: 5/10;">
+                  <div class="bar-text">a</div>
+                  <div class="bar-favmark" style="background-color: #d39000"></div> 
+                  <div class="bar-fill stripes" style="background-color: rgba(0,0,0, .15); width: 50%;"></div>
+                  <div class="bar-bg" style="background-color: #00d3cd"></div>
+                </li>
+                <li style="grid-column: 10/14; background-color: #2ecaac;">b</li>
+                <li style="grid-column: 9/11; background-color: #2ecaac;">c</li>
+              </ul>
+            </div>
+          </div>
+          <div class="gantt-view-group">
+            <div class="gantt-row gantt-firstrow">
+              <div class="gantt-row__first">
+                <div class="rowline-button">
+                  <i class="far fa-minus-square"></i>
+                  <i class="far fa-plus-square d-none"></i>
+                  Primary
+                </div>
+              </div>
+              <ul class="gantt-row__bars gantt-row__compress">
+                <li class="bar-compress" style="grid-column: 5/9; background-color:rgba(0,0,0, .10)">1
+                </li>
+                <li class="bar-compress" style="grid-column: 9/11; background-color:rgba(0,0,0, .20)">2
+                </li>
+                <li class="bar-compress" style="grid-column: 11/14; background-color:rgba(0,0,0, .10)">1
+                </li>
+              </ul>
+            </div>
+            <div class="gantt-row gantt-secondrow" >
+              <div class="gantt-row__first"></div>
+              <ul class="gantt-row__bars gantt-row__extend">
+                <li class="pop" data-container="body" data-toggle="popover" data-placement="bottom" style="grid-column: 5/10;">
+                  <div class="bar-text">a</div>
+                  <div class="bar-favmark" style="background-color: #d39000"></div> 
+                  <div class="bar-fill stripes" style="background-color: rgba(0,0,0, .15); width: 50%;"></div>
+                  <div class="bar-bg" style="background-color: #00d3cd"></div>
+                </li>
+                <li style="grid-column: 10/14; background-color: #2ecaac;">b</li>
+                <li style="grid-column: 9/11; background-color: #2ecaac;">c</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="popover_content_wrapper" class="d-none">
+        <button class="task-button btn btn-primary btn-sm mr-1" data-event="plan" >Plan existing</button><button class="task-button btn btn-primary btn-sm" data-event="create" >Create</button>
+      </div>
+    </div>
+    <!-- inject js -->
+    <script src="js/bundle-c880015fba.js"></script>
+  </body>
+</html>
