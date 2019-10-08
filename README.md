@@ -1,13 +1,13 @@
 # Odoo test by Ke Thien
 
-## Introduction
+## 🚀 Introduction
 
 [**DEMO**](https://nostalgic-hawking-eeafec.netlify.com/) deployed on Netlify
 If you want, you can copy the git project. [Instruction here](#getting-started)
 
 It's part of the hiring process where I got some directives and recreate like in the screenshot
 
-## Notes
+## 📝 Notes
 
 I decided to generate the gantt view page with the json api that come with the brief and not just make the html css.
 
@@ -26,7 +26,7 @@ In the main.js file, I add manually for the demo purpose that why can fav a task
 
 I made a second input "Secondary" in the json to show that it works with the API if there is multiple group (but it's better with an id than the way I did with the group name)
 
-## Difficulties
+## 🎯 Difficulties
 
 One of my difficult task was to generate the tags html for each tasks bar and put it in the grid.
 The vertical lines of the grid needed to be dynamic because I wanted to make the app possible to change the month and take the right number of days in the month.
@@ -35,7 +35,7 @@ I had some really difficulties with the gray tasks bars because I didn't find ou
 
 Make the popover to work was another challenge because the popovers with bootstrap are made to be activated with a click of a button and not on hover
 
-## My comments
+## 💡 My comments
 
 ### What do you find good/bad about this screen ?
 
@@ -49,7 +49,7 @@ Maybe add tag legend for each custom color (like in trello).
 
 For the purpose of the test, I would prefer to have more explicit type of names of tasks than "a", "b" or "agrnlgkrlgrlgklrgk...". Like "task 1", "task 2", etc.
 
-## Technology
+## 🧬 Technology
 
 SASS
 · Babel
