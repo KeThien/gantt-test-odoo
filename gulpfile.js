@@ -161,7 +161,8 @@ gulp.task(
     'icons',
     'build-sass',
     'compress-js',
-    'optimise-img'
+    'optimise-img',
+    'add-json'
   )
 );
 
