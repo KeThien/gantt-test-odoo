@@ -152,7 +152,14 @@ gulp.task(
     done();
   })
 );
-
+// copy json files from assets
+gulp.task(
+  'add-json',
+  gulp.series(function(done) {
+    return gulp.src(json_src).pipe(gulp.dest(assets));
+    done();
+  })
+);
 // build and minify
 gulp.task(
   'build-compress',
@@ -166,14 +173,6 @@ gulp.task(
   )
 );
 
-// copy json files from assets
-gulp.task(
-  'add-json',
-  gulp.series(function(done) {
-    return gulp.src(json_src).pipe(gulp.dest(assets));
-    done();
-  })
-);
 // build files
 gulp.task(
   'build-all',
